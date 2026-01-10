@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 interface TimelineEvent {
   year: string;
@@ -79,10 +79,8 @@ export default function Journey() {
 }
 
 function TimelineItem({ event, index }: { event: TimelineEvent; index: number }) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
 
   const isEven = index % 2 === 0;
 
