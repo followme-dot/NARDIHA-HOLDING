@@ -1,0 +1,135 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                        NARDIHA HOLDINGS LANDING PAGE                         ║
+║                           ⚡ QUICK START GUIDE ⚡                            ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🎯 GOAL: Get the most spectacular Web3 gaming landing page running in 5 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 PREREQUISITES
+
+✓ Node.js 18+ installed
+✓ Terminal/Command Prompt access
+✓ Assets folder with logo.png and nardiha-hero.jpg
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ 3 COMMANDS TO LAUNCH
+
+1. Install dependencies:
+
+   npm install
+
+2. Start development server:
+
+   npm run dev
+
+3. Open browser:
+
+   http://localhost:3000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ WHAT YOU'LL SEE
+
+1. EPIC LOADING SCREEN (8-10 seconds)
+   → 20,000 particles forming NARDIHA logo
+   → 6 cinematic phases
+   → Magical glow effects
+
+2. HERO SECTION
+   → Full-screen cosmic background
+   → Gradient animated text
+   → Platform ticker
+
+3. STATS SECTION
+   → Animated counters
+   → $100M+ revenue projection
+   → 7 platforms showcased
+
+4. PLATFORM SHOWCASES
+   → All 7 platforms with detailed features
+   → Alternating layout
+   → Interactive cards
+
+5. LEADERSHIP
+   → Team member profiles
+   → Glassmorphism effects
+
+6. CTA & CONTACT
+   → Get Started buttons
+   → Contact information
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 VERIFY ASSETS ARE IN PLACE
+
+Check that these files exist:
+
+NARDIHA-HOLDING/
+└── assets/
+    ├── logo.png           ← NARDIHA mystical logo
+    └── nardiha-hero.jpg   ← Hero background image
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 DEPLOY TO PRODUCTION
+
+Option 1: Vercel (Recommended)
+1. Push to GitHub
+2. Import at vercel.com
+3. Deploy (automatic)
+
+Option 2: Build Manually
+npm run build
+npm run start
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛠️ TROUBLESHOOTING
+
+Problem: Black screen on loading
+Solution: Check /assets/logo.png exists
+
+Problem: Images not loading
+Solution: Verify assets are in NARDIHA-HOLDING/assets/ (not /public/)
+
+Problem: Port 3000 in use
+Solution: npm run dev -- -p 3001
+
+Problem: Module not found
+Solution: npm install (again)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 TECH STACK
+
+• Next.js 14 (App Router)
+• TypeScript
+• Tailwind CSS
+• Three.js (Loading screen)
+• GSAP (Animations)
+• Framer Motion (Transitions)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION
+
+• README.md          → Full documentation
+• SETUP-GUIDE.md     → Detailed setup instructions
+• QUICK-START.txt    → This file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💜 Built for NARDIHA Holdings
+   The Future of Web3 Gaming
+
+   © 2025 NARDIHA HOLDINGS
+   Panama City, Panama | Wilmington, Delaware
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Need help? Check README.md for more details.
