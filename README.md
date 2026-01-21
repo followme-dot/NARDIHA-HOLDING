@@ -4,7 +4,7 @@
 
 **The Future of Web3 Gaming is Here**
 
-A spectacular, award-worthy landing page for NARDIHA Holdings - a global Web3 gaming and fintech conglomerate operating 27 integrated platforms.
+A spectacular, award-worthy landing page for NARDIHA Holdings - a global Web3 gaming and fintech conglomerate operating 7 integrated platforms.
 
 ---
 
@@ -30,7 +30,7 @@ A spectacular, award-worthy landing page for NARDIHA Holdings - a global Web3 ga
 
 ### Dynamic Content Sections
 - **Stats Counter** - Animated counters with scroll-triggered visibility
-- **77 Platform Showcases** - Alternating layout with detailed features
+- **7 Platform Showcases** - Alternating layout with detailed features
 - **Interactive Timeline** - Company journey visualization
 - **Leadership Cards** - Team member profiles with glassmorphism
 - **Target Audiences** - Four key user segments

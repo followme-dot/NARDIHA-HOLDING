@@ -262,8 +262,8 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
 
       {/* NARDIHA HOLDINGS text - appears during reveal phase */}
       {phase === 'reveal' && (
-        <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-wider gradient-text animate-pulse">
+        <div className="absolute bottom-[15%] sm:bottom-1/4 md:bottom-1/3 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-wider gradient-text animate-pulse">
             NARDIHA HOLDINGS
           </h1>
         </div>

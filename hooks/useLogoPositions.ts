@@ -43,9 +43,10 @@ export function useLogoPositions(logoPath: string) {
         // Sample every 2nd pixel for performance
         const step = 2;
 
-        // Responsive scale factor - smaller on mobile
+        // Responsive scale factor - much smaller on mobile
         const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-        const scaleFactor = isMobile ? 0.010 : 0.015;
+        const isSmallMobile = typeof window !== 'undefined' && window.innerWidth < 400;
+        const scaleFactor = isSmallMobile ? 0.006 : (isMobile ? 0.008 : 0.015);
 
         for (let y = 0; y < canvas.height; y += step) {
           for (let x = 0; x < canvas.width; x += step) {

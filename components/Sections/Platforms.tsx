@@ -134,21 +134,21 @@ export default function Platforms() {
   ];
 
   return (
-    <section id="platforms" className="py-24 bg-nardiha-bg-darker">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="platforms" className="py-12 sm:py-24 bg-nardiha-bg-darker">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+        <div className="text-center mb-12 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             OUR <span className="gradient-text">PLATFORMS</span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-2">
             Seven integrated platforms working in harmony to deliver the most
             comprehensive Web3 gaming and fintech ecosystem.
           </p>
         </div>
 
         {/* Platforms List */}
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             const isEven = index % 2 === 0;
@@ -158,56 +158,11 @@ export default function Platforms() {
                 key={platform.number}
                 className={`flex flex-col ${
                   isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                } gap-12 items-center`}
+                } gap-6 sm:gap-8 lg:gap-12 items-center`}
               >
-                {/* Content Side */}
-                <div className="flex-1 space-y-6">
-                  {/* Platform Number */}
-                  <div className={`text-8xl font-bold bg-gradient-to-r ${platform.gradient} bg-clip-text text-transparent opacity-20`}>
-                    {platform.number}
-                  </div>
-
-                  {/* Icon */}
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${platform.gradient} flex items-center justify-center magic-pulse`}>
-                    <Icon size={40} className="text-white" />
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white mb-2">
-                      {platform.title}
-                    </h3>
-                    <p className={`text-xl bg-gradient-to-r ${platform.gradient} bg-clip-text text-transparent font-semibold`}>
-                      {platform.subtitle}
-                    </p>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    {platform.description}
-                  </p>
-
-                  {/* Features List */}
-                  <ul className="space-y-3">
-                    {platform.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-gray-400">
-                        <span className={`mr-3 mt-1 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${platform.gradient} flex-shrink-0`} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA Button */}
-                  <div className="pt-4">
-                    <Button variant="outline" size="md">
-                      Learn More →
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Visual Side - Platform Image */}
-                <div className="flex-1">
-                  <Card variant="gradient" className="h-96 relative overflow-hidden group">
+                {/* Visual Side - Platform Image - PRIMERO en móviles */}
+                <div className="w-full lg:flex-1 order-1 lg:order-none">
+                  <Card variant="gradient" className="h-48 sm:h-64 md:h-80 lg:h-96 relative overflow-hidden group">
                     <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-20 group-hover:opacity-30 transition-opacity`} />
                     <div className="relative z-10 w-full h-full">
                       <Image
@@ -215,12 +170,58 @@ export default function Platforms() {
                         alt={platform.title}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                     {/* Animated corner accent */}
-                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${platform.gradient} opacity-10 blur-3xl z-20`} />
-                    <div className={`absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr ${platform.gradient} opacity-10 blur-3xl z-20`} />
+                    <div className={`absolute top-0 right-0 w-16 sm:w-24 lg:w-32 h-16 sm:h-24 lg:h-32 bg-gradient-to-br ${platform.gradient} opacity-10 blur-3xl z-20`} />
+                    <div className={`absolute bottom-0 left-0 w-16 sm:w-24 lg:w-32 h-16 sm:h-24 lg:h-32 bg-gradient-to-tr ${platform.gradient} opacity-10 blur-3xl z-20`} />
                   </Card>
+                </div>
+
+                {/* Content Side */}
+                <div className="w-full lg:flex-1 space-y-4 sm:space-y-6 order-2 lg:order-none">
+                  {/* Platform Number - más pequeño en móvil */}
+                  <div className={`text-5xl sm:text-6xl lg:text-8xl font-bold bg-gradient-to-r ${platform.gradient} bg-clip-text text-transparent opacity-20`}>
+                    {platform.number}
+                  </div>
+
+                  {/* Icon - más pequeño en móvil */}
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-r ${platform.gradient} flex items-center justify-center magic-pulse`}>
+                    <Icon size={28} className="text-white sm:w-9 sm:h-9 lg:w-10 lg:h-10" />
+                  </div>
+
+                  {/* Title */}
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 sm:mb-2">
+                      {platform.title}
+                    </h3>
+                    <p className={`text-base sm:text-lg lg:text-xl bg-gradient-to-r ${platform.gradient} bg-clip-text text-transparent font-semibold`}>
+                      {platform.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+                    {platform.description}
+                  </p>
+
+                  {/* Features List */}
+                  <ul className="space-y-2 sm:space-y-3">
+                    {platform.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start text-gray-400 text-sm sm:text-base">
+                        <span className={`mr-2 sm:mr-3 mt-1.5 sm:mt-1 w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-gradient-to-r ${platform.gradient} flex-shrink-0`} />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA Button */}
+                  <div className="pt-2 sm:pt-4">
+                    <Button variant="outline" size="md" className="text-sm sm:text-base">
+                      Learn More →
+                    </Button>
+                  </div>
                 </div>
               </div>
             );
