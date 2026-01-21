@@ -43,6 +43,10 @@ export function useLogoPositions(logoPath: string) {
         // Sample every 2nd pixel for performance
         const step = 2;
 
+        // Responsive scale factor - smaller on mobile
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+        const scaleFactor = isMobile ? 0.010 : 0.015;
+
         for (let y = 0; y < canvas.height; y += step) {
           for (let x = 0; x < canvas.width; x += step) {
             const i = (y * canvas.width + x) * 4;
@@ -50,9 +54,9 @@ export function useLogoPositions(logoPath: string) {
 
             // Only include visible pixels
             if (alpha > 128) {
-              // Map to 3D coordinates centered at origin
-              const posX = (x - canvas.width / 2) * 0.015;
-              const posY = -(y - canvas.height / 2) * 0.015;
+              // Map to 3D coordinates centered at origin - responsive scale
+              const posX = (x - canvas.width / 2) * scaleFactor;
+              const posY = -(y - canvas.height / 2) * scaleFactor;
 
               // Extract color
               const r = imageData.data[i] / 255;

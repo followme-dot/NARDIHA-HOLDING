@@ -44,18 +44,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          {/* Logo - Responsive sizes */}
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
               <Image
                 src="/assets/logo.png"
                 alt="NARDIHA Holdings"
                 width={100}
                 height={100}
-                className="w-auto h-auto object-contain group-hover:drop-shadow-glow-purple transition-all"
+                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain group-hover:drop-shadow-glow-purple transition-all"
               />
             </div>
-            <span className="text-xl font-bold gradient-text hidden sm:inline">
+            <span className="text-base sm:text-lg md:text-xl font-bold gradient-text">
               NARDIHA
             </span>
           </Link>

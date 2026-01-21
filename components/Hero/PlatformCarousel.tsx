@@ -273,28 +273,28 @@ export default function PlatformCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[340px] flex items-center justify-center px-4">
+    <div className="relative w-full h-[240px] sm:h-[300px] md:h-[340px] flex items-center justify-center px-2 sm:px-4">
       {/* Contenedor de cards apiladas */}
       <div className="relative w-full max-w-[750px] h-full flex items-center justify-center">
 
-        {/* Card del fondo (siguiente) - Posición derecha */}
+        {/* Card del fondo (siguiente) - Posición derecha - Oculta en móviles */}
         <motion.div
           key={`next-${visible.next}`}
-          className="absolute right-0 w-[240px]"
-          initial={{ x: 80, scale: 0.8, opacity: 0.25, zIndex: 1 }}
-          animate={{ x: 80, scale: 0.8, opacity: 0.25, zIndex: 1 }}
+          className="absolute right-0 w-[180px] sm:w-[200px] md:w-[240px] hidden sm:block"
+          initial={{ x: 60, scale: 0.8, opacity: 0.25, zIndex: 1 }}
+          animate={{ x: 60, scale: 0.8, opacity: 0.25, zIndex: 1 }}
           transition={{ duration: 0.5 }}
           style={{ filter: 'blur(1px)' }}
         >
           <StackedPlatformCard {...platforms[visible.next]} />
         </motion.div>
 
-        {/* Card del fondo (anterior) - Posición izquierda */}
+        {/* Card del fondo (anterior) - Posición izquierda - Oculta en móviles */}
         <motion.div
           key={`prev-${visible.prev}`}
-          className="absolute left-0 w-[240px]"
-          initial={{ x: -80, scale: 0.8, opacity: 0.25, zIndex: 1 }}
-          animate={{ x: -80, scale: 0.8, opacity: 0.25, zIndex: 1 }}
+          className="absolute left-0 w-[180px] sm:w-[200px] md:w-[240px] hidden sm:block"
+          initial={{ x: -60, scale: 0.8, opacity: 0.25, zIndex: 1 }}
+          animate={{ x: -60, scale: 0.8, opacity: 0.25, zIndex: 1 }}
           transition={{ duration: 0.5 }}
           style={{ filter: 'blur(1px)' }}
         >
@@ -315,7 +315,7 @@ export default function PlatformCarousel() {
               opacity: { duration: 0.3 },
               scale: { duration: 0.3 },
             }}
-            className="absolute w-[300px]"
+            className="absolute w-[260px] sm:w-[280px] md:w-[300px]"
             style={{ zIndex: 3 }}
           >
             <MainPlatformCard {...platforms[currentIndex]} />
@@ -323,25 +323,25 @@ export default function PlatformCarousel() {
         </AnimatePresence>
       </div>
 
-      {/* Botones de navegación */}
+      {/* Botones de navegación - Más pequeños en móviles */}
       <button
         onClick={handlePrev}
-        className="absolute left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-purple-500/50 hover:scale-110 flex items-center justify-center transition-all duration-300 group"
+        className="absolute left-1 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-purple-500/50 hover:scale-110 flex items-center justify-center transition-all duration-300 group"
         aria-label="Previous platform"
       >
-        <ChevronLeft className="w-6 h-6 text-white group-hover:text-purple-400 transition-colors" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white group-hover:text-purple-400 transition-colors" />
       </button>
 
       <button
         onClick={handleNext}
-        className="absolute right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-purple-500/50 hover:scale-110 flex items-center justify-center transition-all duration-300 group"
+        className="absolute right-1 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-purple-500/50 hover:scale-110 flex items-center justify-center transition-all duration-300 group"
         aria-label="Next platform"
       >
-        <ChevronRight className="w-6 h-6 text-white group-hover:text-purple-400 transition-colors" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white group-hover:text-purple-400 transition-colors" />
       </button>
 
-      {/* Indicadores de página - Agrupados para 27 plataformas */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+      {/* Indicadores de página - Ocultos en móviles, solo contador */}
+      <div className="absolute bottom-1 sm:bottom-4 left-1/2 -translate-x-1/2 hidden sm:flex gap-1 md:gap-1.5 z-10">
         {platforms.map((_, index) => (
           <button
             key={index}
@@ -349,61 +349,61 @@ export default function PlatformCarousel() {
               setDirection(index > currentIndex ? 1 : -1);
               setCurrentIndex(index);
             }}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
+            className={`h-1 md:h-1.5 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'w-6 bg-gradient-to-r from-purple-500 to-pink-500'
-                : 'w-1.5 bg-white/30 hover:bg-white/50'
+                ? 'w-4 md:w-6 bg-gradient-to-r from-purple-500 to-pink-500'
+                : 'w-1 md:w-1.5 bg-white/30 hover:bg-white/50'
             }`}
             aria-label={`Go to platform ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Contador de plataforma */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-white/60 text-xs font-medium">
+      {/* Contador de plataforma - Siempre visible */}
+      <div className="absolute bottom-1 sm:bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 z-10 text-white/60 text-[10px] sm:text-xs font-medium">
         {currentIndex + 1} / {platforms.length}
       </div>
     </div>
   );
 }
 
-// Card principal (centro) - Con color de fondo arcoiris
+// Card principal (centro) - Con color de fondo arcoiris - Responsive
 function MainPlatformCard({ icon: Icon, title, subtitle, description, bgColor }: any) {
   return (
-    <div className={`group relative h-[280px] bg-gradient-to-br ${bgColor} backdrop-blur-md border border-white/10 rounded-2xl p-6 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30`}>
+    <div className={`group relative h-[200px] sm:h-[240px] md:h-[280px] bg-gradient-to-br ${bgColor} backdrop-blur-md border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30`}>
       {/* Efecto de brillo en hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Icono */}
-      <div className="relative mb-4 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-        <Icon className="w-6 h-6 text-white group-hover:text-pink-300 transition-colors" />
+      <div className="relative mb-2 sm:mb-3 md:mb-4 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white group-hover:text-pink-300 transition-colors" />
       </div>
 
       {/* Contenido */}
       <div className="relative">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-pink-200 transition-all duration-300">
+        <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-pink-200 transition-all duration-300">
           {title}
         </h3>
-        <p className="text-xs text-white/80 mb-3 font-medium">{subtitle}</p>
-        <p className="text-xs text-white/60 leading-relaxed">{description}</p>
+        <p className="text-[10px] sm:text-xs text-white/80 mb-2 sm:mb-3 font-medium">{subtitle}</p>
+        <p className="text-[10px] sm:text-xs text-white/60 leading-relaxed line-clamp-3 sm:line-clamp-none">{description}</p>
       </div>
 
       {/* Partículas decorativas */}
-      <div className="absolute top-3 right-3 w-16 h-16 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
-      <div className="absolute bottom-3 left-3 w-12 h-12 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
+      <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
+      <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
     </div>
   );
 }
 
-// Cards apiladas (laterales) - Con color de fondo arcoiris
+// Cards apiladas (laterales) - Con color de fondo arcoiris - Responsive
 function StackedPlatformCard({ icon: Icon, title, subtitle, bgColor }: any) {
   return (
-    <div className={`h-[260px] bg-gradient-to-br ${bgColor} backdrop-blur-sm border border-white/5 rounded-2xl p-5 overflow-hidden`}>
-      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-3">
-        <Icon className="w-5 h-5 text-white/60" />
+    <div className={`h-[200px] sm:h-[220px] md:h-[260px] bg-gradient-to-br ${bgColor} backdrop-blur-sm border border-white/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 overflow-hidden`}>
+      <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white/10 flex items-center justify-center mb-2 sm:mb-3">
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
       </div>
-      <h3 className="text-base font-bold text-white/60 mb-2">{title}</h3>
-      <p className="text-xs text-white/50">{subtitle}</p>
+      <h3 className="text-sm sm:text-base font-bold text-white/60 mb-1 sm:mb-2">{title}</h3>
+      <p className="text-[10px] sm:text-xs text-white/50">{subtitle}</p>
     </div>
   );
 }

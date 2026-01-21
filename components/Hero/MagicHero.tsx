@@ -84,16 +84,16 @@ export default function MagicHero() {
       />
 
       {/* CONTENIDO PRINCIPAL */}
-      <div className="relative z-10 text-center text-white px-6 max-w-7xl mx-auto pt-24">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-7xl mx-auto pt-20 sm:pt-24">
 
         {/* Subtítulo Superior */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-sm uppercase tracking-[0.3em] text-purple-300 mb-8 font-medium"
+          className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.3em] text-purple-300 mb-4 sm:mb-8 font-medium"
         >
-          <span className="inline-block px-4 py-2 border border-purple-500/30 rounded-full backdrop-blur-sm bg-purple-900/20">
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 border border-purple-500/30 rounded-full backdrop-blur-sm bg-purple-900/20 text-[10px] sm:text-sm">
             27 Integrated Web3 & Gaming Platforms
           </span>
         </motion.p>
@@ -103,7 +103,7 @@ export default function MagicHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight relative"
+          className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight relative"
         >
           <span className="block mb-2">THE FUTURE OF</span>
           <span className="block relative inline-block">
@@ -161,7 +161,7 @@ export default function MagicHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-10 h-12 flex items-center justify-center"
+          className="mb-6 sm:mb-10 h-8 sm:h-12 flex items-center justify-center"
         >
           <div className="relative overflow-hidden h-full flex items-center">
             {platforms.map((platform, index) => (
@@ -171,10 +171,10 @@ export default function MagicHero() {
                 animate={{
                   opacity: index === currentPlatform ? 1 : 0.2,
                   y: index === currentPlatform ? 0 : 20,
-                  scale: index === currentPlatform ? 1.2 : 1,
+                  scale: index === currentPlatform ? 1.1 : 1,
                 }}
                 transition={{ duration: 0.5 }}
-                className={`absolute left-1/2 -translate-x-1/2 text-xl md:text-2xl font-bold tracking-wider ${
+                className={`absolute left-1/2 -translate-x-1/2 text-sm sm:text-xl md:text-2xl font-bold tracking-wider ${
                   index === currentPlatform
                     ? 'text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400'
                     : 'text-gray-500'
@@ -194,7 +194,7 @@ export default function MagicHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-base md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed font-light"
+          className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 sm:mb-10 max-w-3xl mx-auto leading-relaxed font-light px-2"
         >
           A <span className="text-purple-400 font-medium">global Web3 conglomerate</span> offering integrated solutions for gaming,
           DeFi, fintech, and digital entertainment.
@@ -205,13 +205,13 @@ export default function MagicHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center mb-24"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center mb-12 sm:mb-24 px-4"
         >
           {/* Botón Principal */}
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-2xl font-bold text-base overflow-hidden shadow-2xl shadow-purple-500/50"
+            className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base overflow-hidden shadow-2xl shadow-purple-500/50"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               Explore Ecosystem
@@ -236,7 +236,7 @@ export default function MagicHero() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group relative px-8 py-4 bg-white/5 backdrop-blur-md border-2 border-white/20 rounded-2xl font-bold text-base overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/30"
+            className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-white/5 backdrop-blur-md border-2 border-white/20 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/30"
           >
             <span className="relative z-10">Get Started</span>
             {/* Glow en hover */}
@@ -250,34 +250,34 @@ export default function MagicHero() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="relative z-10 w-full px-4 mb-16"
+        className="relative z-10 w-full px-2 sm:px-4 mb-8 sm:mb-16"
       >
         <PlatformCarousel />
       </motion.div>
 
-      {/* Scroll Indicator Mágico */}
+      {/* Scroll Indicator Mágico - Oculto en móviles pequeños */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-4 sm:bottom-12 left-1/2 -translate-x-1/2 z-10 hidden sm:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-3 cursor-pointer group"
+          className="flex flex-col items-center gap-2 sm:gap-3 cursor-pointer group"
         >
-          <div className="w-7 h-12 border-2 border-white/30 rounded-full flex justify-center group-hover:border-purple-400 transition-colors relative overflow-hidden">
+          <div className="w-6 h-10 sm:w-7 sm:h-12 border-2 border-white/30 rounded-full flex justify-center group-hover:border-purple-400 transition-colors relative overflow-hidden">
             <motion.div
-              className="w-2 h-3 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full mt-2"
+              className="w-1.5 h-2.5 sm:w-2 sm:h-3 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full mt-2"
               animate={{ y: [0, 20, 0], opacity: [1, 0, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
           </div>
-          <p className="text-white/70 text-xs uppercase tracking-[0.3em] group-hover:text-purple-400 transition-colors font-medium">
+          <p className="text-white/70 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] group-hover:text-purple-400 transition-colors font-medium">
             Scroll
           </p>
-          <ChevronDown className="w-5 h-5 text-white/50 group-hover:text-purple-400 transition-colors" />
+          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white/50 group-hover:text-purple-400 transition-colors" />
         </motion.div>
       </motion.div>
 
