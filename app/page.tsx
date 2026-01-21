@@ -6,6 +6,7 @@ import Navbar from '@/components/Navigation/Navbar';
 import MagicHero from '@/components/Hero/MagicHero';
 import ValueProposition from '@/components/Sections/ValueProposition';
 import Platforms from '@/components/Sections/Platforms';
+import EcosystemPlatforms from '@/components/Sections/EcosystemPlatforms';
 import About from '@/components/Sections/About';
 import Journey from '@/components/Sections/Journey';
 import Leadership from '@/components/Sections/Leadership';
@@ -42,6 +43,7 @@ export default function HomePage() {
             <MagicHero />
             <ValueProposition />
             <Platforms />
+            <EcosystemPlatforms />
             <About />
             <Journey />
             <Leadership />

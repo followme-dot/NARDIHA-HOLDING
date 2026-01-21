@@ -10,13 +10,37 @@ export default function MagicHero() {
   const [currentPlatform, setCurrentPlatform] = useState(0);
 
   const platforms = [
+    // 7 Core Platforms
     'NARI',
     'ZAPHUB',
     'THOR WALLET',
     'NARDIUM',
     'NARDIHA SANCTUM',
     'SPARKLE TOYS',
-    'GENESIS REALMS'
+    'GENESIS REALMS',
+    // DeFi & Trading (5)
+    'BITBOOTS',
+    'NARDIUM DEX',
+    'ARGENTUM BRIDGE',
+    'AUREUM VAULT',
+    'TRADE MAD',
+    // Gaming & Metaverse (4)
+    'TEMPLUM DAO',
+    'SSEUM GAMES',
+    'BB NFT',
+    'GLADIUS HUB',
+    // Infrastructure & Identity (5)
+    'VERITAS ID',
+    'VIGIL AI',
+    'ORACULUM',
+    'FERRUM PAY',
+    'NEXUS GRID',
+    // Enterprise & Compliance (5)
+    'SUSINIK',
+    'TRIBUTUM',
+    'AETHER HUB',
+    'AGORA SOCIAL',
+    'ASTRID'
   ];
 
   useEffect(() => {
@@ -70,7 +94,7 @@ export default function MagicHero() {
           className="text-sm uppercase tracking-[0.3em] text-purple-300 mb-8 font-medium"
         >
           <span className="inline-block px-4 py-2 border border-purple-500/30 rounded-full backdrop-blur-sm bg-purple-900/20">
-            7 Integrated Web3 & Gaming Platforms
+            27 Integrated Web3 & Gaming Platforms
           </span>
         </motion.p>
 

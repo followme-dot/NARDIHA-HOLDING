@@ -3,21 +3,28 @@ import Image from 'next/image';
 import { Linkedin, Twitter, Github } from 'lucide-react';
 
 export default function Footer() {
-  const platforms = [
+  const corePlatforms = [
     { name: 'NARI', href: '#platforms' },
     { name: 'ZAPHUB', href: '#platforms' },
     { name: 'THOR WALLET', href: '#platforms' },
     { name: 'NARDIUM', href: '#platforms' },
-    { name: 'NARDIHA SANCTUM', href: '#platforms' },
+    { name: 'SANCTUM', href: '#platforms' },
     { name: 'SPARKLE TOYS', href: '#platforms' },
     { name: 'GENESIS REALMS', href: '#platforms' },
   ];
 
+  const ecosystem = [
+    { name: 'DeFi & Trading', href: '#ecosystem', count: 5 },
+    { name: 'Gaming & Metaverse', href: '#ecosystem', count: 4 },
+    { name: 'Infrastructure', href: '#ecosystem', count: 5 },
+    { name: 'Enterprise', href: '#ecosystem', count: 5 },
+  ];
+
   const company = [
     { name: 'About', href: '#about' },
+    { name: 'Our Journey', href: '#journey' },
     { name: 'Leadership', href: '#leadership' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '#contact' },
     { name: 'Press', href: '/press' },
   ];
 
@@ -30,7 +37,7 @@ export default function Footer() {
   return (
     <footer className="bg-nardiha-bg-darker border-t border-nardiha-purple/20">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div>
             <Link href="/" className="flex items-center space-x-3 mb-4 group">
@@ -78,13 +85,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Platforms Column */}
+          {/* Core Platforms Column */}
           <div>
             <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">
-              Platforms
+              Core Platforms
             </h4>
             <ul className="space-y-2">
-              {platforms.map((platform) => (
+              {corePlatforms.map((platform) => (
                 <li key={platform.name}>
                   <Link
                     href={platform.href}
@@ -94,6 +101,34 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Ecosystem Column */}
+          <div>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">
+              Ecosystem
+            </h4>
+            <ul className="space-y-2">
+              {ecosystem.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 text-sm hover:text-nardiha-purple transition-colors"
+                  >
+                    {item.name}
+                    <span className="text-xs text-purple-400 ml-1">({item.count})</span>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="#ecosystem"
+                  className="text-purple-400 text-sm hover:text-purple-300 transition-colors font-medium"
+                >
+                  View All 19+ →
+                </Link>
+              </li>
             </ul>
           </div>
 

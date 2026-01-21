@@ -7,7 +7,7 @@ import { Layers, Shield, Gamepad2 } from 'lucide-react';
 export default function ValueProposition() {
   const stats = [
     { value: 100, suffix: 'M+', label: 'Projected Revenue (Y3)' },
-    { value: 7, suffix: '', label: 'Integrated Platforms' },
+    { value: 27, suffix: '', label: 'Integrated Platforms' },
     { value: 500, suffix: 'K+', label: 'Users Projected' },
     { value: 100, suffix: '+', label: 'Smart Contracts' },
     { value: 99.9, suffix: '%', label: 'Uptime SLA' },
@@ -18,7 +18,7 @@ export default function ValueProposition() {
     {
       icon: Layers,
       title: 'Unified Ecosystem',
-      description: 'All 7 platforms work seamlessly together, sharing data and infrastructure for a cohesive user experience.',
+      description: 'All 27 platforms work seamlessly together, sharing data and infrastructure for a cohesive user experience.',
     },
     {
       icon: Shield,

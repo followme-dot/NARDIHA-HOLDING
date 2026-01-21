@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto pt-20">
         <p className="text-sm uppercase tracking-widest text-purple-300 mb-6 animate-fadeIn">
-          7 Integrated Web3 & Gaming Platforms
+          27 Integrated Web3 & Gaming Platforms
         </p>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fadeIn animation-delay-200">

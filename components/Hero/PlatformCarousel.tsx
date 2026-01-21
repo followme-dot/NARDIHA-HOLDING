@@ -9,60 +9,215 @@ import {
   Brain,
   Swords,
   Package,
-  Castle
+  Castle,
+  Bot,
+  ArrowLeftRight,
+  Link2,
+  Lock,
+  LineChart,
+  Gavel,
+  Gamepad2,
+  Image as ImageIcon,
+  Fingerprint,
+  Eye,
+  Radio,
+  Server,
+  Leaf,
+  Calculator,
+  Users,
+  MessageCircle,
+  Star
 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// LAS 7 PLATAFORMAS DE NARDIHA
+// LAS 27 PLATAFORMAS DE NARDIHA con colores arcoiris
 const platforms = [
+  // 7 Core Platforms
   {
     icon: CreditCard,
     title: 'NARI',
     subtitle: 'Fintech Web3 Revolution',
     description: 'Premium metal card with crypto-to-fiat conversion + NARI Dragon Guardian IoT device',
-    href: '#nari'
+    bgColor: 'from-red-500/20 to-red-600/10'
   },
   {
     icon: Workflow,
     title: 'ZAPHUB',
     subtitle: 'Enterprise Automation Platform',
     description: 'Self-hosted workflow automation with AI Copilot and marketplace (70/30 split)',
-    href: '#zaphub'
+    bgColor: 'from-orange-500/20 to-orange-600/10'
   },
   {
     icon: Wallet,
     title: 'THOR WALLET',
     subtitle: 'Multi-Chain DeFi Wallet',
     description: 'Self-custody wallet with integrated DeFi, 6 automated trading strategies',
-    href: '#thorwallet'
+    bgColor: 'from-amber-500/20 to-amber-600/10'
   },
   {
     icon: Brain,
     title: 'NARDIUM',
     subtitle: 'AI-Powered DeFi Super Wallet',
     description: 'DApp wallet featuring 6 AI trading bots, social trading, and gamification',
-    href: '#nardium'
+    bgColor: 'from-yellow-500/20 to-yellow-600/10'
   },
   {
     icon: Swords,
     title: 'NARDIHA SANCTUM',
     subtitle: 'NFT Gaming Marketplace',
     description: '240+ unique characters, staking up to 48% APY, PvP/PvE battles',
-    href: '#sanctum'
+    bgColor: 'from-lime-500/20 to-lime-600/10'
   },
   {
     icon: Package,
     title: 'SPARKLE TOYS',
     subtitle: 'Phygital NFT Collectibles',
     description: 'Premium physical toys with NFC technology that generate unique NFTs',
-    href: '#sparkletoys'
+    bgColor: 'from-green-500/20 to-green-600/10'
   },
   {
     icon: Castle,
     title: 'GENESIS REALMS',
     subtitle: 'Gaming NFT SaaS Platform',
     description: 'Multi-blockchain NFT marketplace with rental system and DAO governance',
-    href: '#genesisrealms'
+    bgColor: 'from-emerald-500/20 to-emerald-600/10'
+  },
+  // DeFi & Trading (5)
+  {
+    icon: Bot,
+    title: 'BITBOOTS',
+    subtitle: 'AI Trading Bot with 35% Returns',
+    description: 'Trading bot AI with 20+ strategies, reinforcement learning, 15 exchanges',
+    bgColor: 'from-teal-500/20 to-teal-600/10'
+  },
+  {
+    icon: ArrowLeftRight,
+    title: 'NARDIUM DEX',
+    subtitle: 'Next-Gen Decentralized Exchange',
+    description: 'DEX with concentrated liquidity, hybrid order book, cross-chain swaps',
+    bgColor: 'from-cyan-500/20 to-cyan-600/10'
+  },
+  {
+    icon: Link2,
+    title: 'ARGENTUM BRIDGE',
+    subtitle: 'Lightning-Fast Cross-Chain Bridge',
+    description: 'Ultra-fast bridge (5-min settlement), 10 chains, $10M insurance pool',
+    bgColor: 'from-sky-500/20 to-sky-600/10'
+  },
+  {
+    icon: Lock,
+    title: 'AUREUM VAULT',
+    subtitle: 'Institutional-Grade Crypto Vault',
+    description: 'Multi-sig vault with $100M insurance, hardware wallet, time locks',
+    bgColor: 'from-blue-500/20 to-blue-600/10'
+  },
+  {
+    icon: LineChart,
+    title: 'TRADE MAD',
+    subtitle: 'Pro Trading Analytics Platform',
+    description: 'Portfolio tracking, automated tax reporting, ML-powered insights',
+    bgColor: 'from-indigo-500/20 to-indigo-600/10'
+  },
+  // Gaming & Metaverse (4)
+  {
+    icon: Gavel,
+    title: 'TEMPLUM DAO',
+    subtitle: 'Revolutionary NFT Auction Marketplace',
+    description: '4 auction types, zkML anti-wash trading, fractional ownership 2.0',
+    bgColor: 'from-violet-500/20 to-violet-600/10'
+  },
+  {
+    icon: Gamepad2,
+    title: 'SSEUM GAMES',
+    subtitle: 'Play-to-Earn Mini-Games Platform',
+    description: '20+ casual mini-games, weekly tournaments, cross-game assets',
+    bgColor: 'from-purple-500/20 to-purple-600/10'
+  },
+  {
+    icon: ImageIcon,
+    title: 'BB NFT',
+    subtitle: 'Generative NFT Creation Platform',
+    description: 'Generative art engine for 10K collections, built-in rarity ranking',
+    bgColor: 'from-fuchsia-500/20 to-fuchsia-600/10'
+  },
+  {
+    icon: Swords,
+    title: 'GLADIUS HUB',
+    subtitle: 'Your Web3 Gaming Hub',
+    description: '500+ Web3 games, user reviews, cross-game tournaments',
+    bgColor: 'from-pink-500/20 to-pink-600/10'
+  },
+  // Infrastructure & Identity (5)
+  {
+    icon: Fingerprint,
+    title: 'VERITAS ID',
+    subtitle: 'Your Decentralized Digital Identity',
+    description: 'W3C DIDs, zero-knowledge proofs, Web2 integration (OAuth, SAML)',
+    bgColor: 'from-rose-500/20 to-rose-600/10'
+  },
+  {
+    icon: Eye,
+    title: 'VIGIL AI',
+    subtitle: 'AI-Powered Web3 Security',
+    description: 'Smart contract exploit detection, phishing alerts, rug pull prediction',
+    bgColor: 'from-red-400/20 to-red-500/10'
+  },
+  {
+    icon: Radio,
+    title: 'ORACULUM',
+    subtitle: 'Decentralized Oracle Network',
+    description: 'Price feeds (1-sec updates), 30 oracle nodes, 5 chains supported',
+    bgColor: 'from-orange-400/20 to-orange-500/10'
+  },
+  {
+    icon: CreditCard,
+    title: 'FERRUM PAY',
+    subtitle: 'Crypto + Fiat Payment Processing',
+    description: '50 cryptos + 150 fiat currencies, real-time FX, ML fraud prevention',
+    bgColor: 'from-amber-400/20 to-amber-500/10'
+  },
+  {
+    icon: Server,
+    title: 'NEXUS GRID',
+    subtitle: 'Decentralized Compute Network',
+    description: 'GPU & CPU marketplace, 50% cheaper than AWS, AI/ML training',
+    bgColor: 'from-yellow-400/20 to-yellow-500/10'
+  },
+  // Enterprise & Compliance (5)
+  {
+    icon: Leaf,
+    title: 'SUSINIK',
+    subtitle: 'AI-Verified Carbon Credits',
+    description: 'Satellite AI verification, 1 NFT = 1 ton CO2, ESG reporting',
+    bgColor: 'from-lime-400/20 to-lime-500/10'
+  },
+  {
+    icon: Calculator,
+    title: 'TRIBUTUM',
+    subtitle: 'Crypto Tax Made Easy',
+    description: 'Auto-calculate capital gains, IRS Form 8949, 25 countries',
+    bgColor: 'from-green-400/20 to-green-500/10'
+  },
+  {
+    icon: Users,
+    title: 'AETHER HUB',
+    subtitle: 'Multi-Agent AI for Business',
+    description: '10+ AI agent types, multi-agent coordination, Claude 3.5 powered',
+    bgColor: 'from-emerald-400/20 to-emerald-500/10'
+  },
+  {
+    icon: MessageCircle,
+    title: 'AGORA SOCIAL',
+    subtitle: 'Decentralized Social Media',
+    description: 'Posts as NFTs, direct monetization, censorship-resistant',
+    bgColor: 'from-teal-400/20 to-teal-500/10'
+  },
+  {
+    icon: Star,
+    title: 'ASTRID',
+    subtitle: 'Stellar Asset Management',
+    description: 'Institutional-grade security, AI-powered investment strategies',
+    bgColor: 'from-cyan-400/20 to-cyan-500/10'
   }
 ];
 
@@ -70,11 +225,11 @@ export default function PlatformCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  // Auto-avanzar cada 5 segundos
+  // Auto-avanzar cada 4 segundos
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [currentIndex]);
 
@@ -185,8 +340,8 @@ export default function PlatformCarousel() {
         <ChevronRight className="w-6 h-6 text-white group-hover:text-purple-400 transition-colors" />
       </button>
 
-      {/* Indicadores de página */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      {/* Indicadores de página - Agrupados para 27 plataformas */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
         {platforms.map((_, index) => (
           <button
             key={index}
@@ -194,56 +349,61 @@ export default function PlatformCarousel() {
               setDirection(index > currentIndex ? 1 : -1);
               setCurrentIndex(index);
             }}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-1.5 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'w-8 bg-gradient-to-r from-purple-500 to-pink-500'
-                : 'w-2 bg-white/30 hover:bg-white/50'
+                ? 'w-6 bg-gradient-to-r from-purple-500 to-pink-500'
+                : 'w-1.5 bg-white/30 hover:bg-white/50'
             }`}
             aria-label={`Go to platform ${index + 1}`}
           />
         ))}
       </div>
+
+      {/* Contador de plataforma */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-white/60 text-xs font-medium">
+        {currentIndex + 1} / {platforms.length}
+      </div>
     </div>
   );
 }
 
-// Card principal (centro) - Compacta y elegante
-function MainPlatformCard({ icon: Icon, title, subtitle, description }: any) {
+// Card principal (centro) - Con color de fondo arcoiris
+function MainPlatformCard({ icon: Icon, title, subtitle, description, bgColor }: any) {
   return (
-    <div className="group relative h-[280px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30">
+    <div className={`group relative h-[280px] bg-gradient-to-br ${bgColor} backdrop-blur-md border border-white/10 rounded-2xl p-6 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30`}>
       {/* Efecto de brillo en hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Icono */}
-      <div className="relative mb-4 w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-        <Icon className="w-6 h-6 text-purple-400 group-hover:text-pink-400 transition-colors" />
+      <div className="relative mb-4 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <Icon className="w-6 h-6 text-white group-hover:text-pink-300 transition-colors" />
       </div>
 
       {/* Contenido */}
       <div className="relative">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-pink-200 transition-all duration-300">
           {title}
         </h3>
-        <p className="text-xs text-purple-400 mb-3 font-medium">{subtitle}</p>
-        <p className="text-xs text-gray-400 leading-relaxed">{description}</p>
+        <p className="text-xs text-white/80 mb-3 font-medium">{subtitle}</p>
+        <p className="text-xs text-white/60 leading-relaxed">{description}</p>
       </div>
 
       {/* Partículas decorativas */}
-      <div className="absolute top-3 right-3 w-16 h-16 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-colors" />
-      <div className="absolute bottom-3 left-3 w-12 h-12 bg-pink-500/10 rounded-full blur-2xl group-hover:bg-pink-500/20 transition-colors" />
+      <div className="absolute top-3 right-3 w-16 h-16 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
+      <div className="absolute bottom-3 left-3 w-12 h-12 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
     </div>
   );
 }
 
-// Cards apiladas (laterales) - Más pequeñas y con efecto de profundidad
-function StackedPlatformCard({ icon: Icon, title, subtitle }: any) {
+// Cards apiladas (laterales) - Con color de fondo arcoiris
+function StackedPlatformCard({ icon: Icon, title, subtitle, bgColor }: any) {
   return (
-    <div className="h-[260px] bg-white/3 backdrop-blur-sm border border-white/5 rounded-2xl p-5 overflow-hidden">
-      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 flex items-center justify-center mb-3">
-        <Icon className="w-5 h-5 text-purple-400/60" />
+    <div className={`h-[260px] bg-gradient-to-br ${bgColor} backdrop-blur-sm border border-white/5 rounded-2xl p-5 overflow-hidden`}>
+      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-3">
+        <Icon className="w-5 h-5 text-white/60" />
       </div>
       <h3 className="text-base font-bold text-white/60 mb-2">{title}</h3>
-      <p className="text-xs text-purple-400/60">{subtitle}</p>
+      <p className="text-xs text-white/50">{subtitle}</p>
     </div>
   );
 }
