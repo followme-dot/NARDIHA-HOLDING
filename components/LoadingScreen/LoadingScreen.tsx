@@ -101,14 +101,18 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       originalPositions[i3 + 2] = velocities[i3 + 2];
 
       // Set target positions (logo formation or random)
+      // Offset logo upward on mobile so text fits below
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+      const logoYOffset = isMobile ? 3 : 2; // Move logo up
+
       if (logoPositions.length > 0 && i < logoPositions.length) {
         const logoPos = logoPositions[i];
         targetPositions[i3] = logoPos.x;
-        targetPositions[i3 + 1] = logoPos.y;
+        targetPositions[i3 + 1] = logoPos.y + logoYOffset; // Offset upward
         targetPositions[i3 + 2] = logoPos.z;
       } else {
         targetPositions[i3] = randomRange(-30, 30);
-        targetPositions[i3 + 1] = randomRange(-30, 30);
+        targetPositions[i3 + 1] = randomRange(-30, 30) + logoYOffset;
         targetPositions[i3 + 2] = randomRange(-10, 10);
       }
     }
@@ -262,8 +266,8 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
 
       {/* NARDIHA HOLDINGS text - appears during reveal phase */}
       {phase === 'reveal' && (
-        <div className="absolute bottom-[15%] sm:bottom-1/4 md:bottom-1/3 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-wider gradient-text animate-pulse">
+        <div className="absolute inset-x-0 bottom-[22%] sm:bottom-[28%] md:bottom-[32%] flex justify-center px-4">
+          <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-wider gradient-text animate-pulse whitespace-nowrap">
             NARDIHA HOLDINGS
           </h1>
         </div>
